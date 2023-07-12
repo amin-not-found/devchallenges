@@ -1,0 +1,86 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+:root{
+    --teammate-margin: 4vw;
+}
+
+#info{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#info h2{
+    font-family: "PT Serif", serif;
+    margin-right: 18vw;
+}
+
+#info div{
+    max-width: 22rem;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-inline: calc(44vw - 320px);
+    column-gap: 4vw;
+}
+
+.teammate{
+    position: relative;
+    font-size: 1.8vh;
+}
+
+.teammate::before{
+    position: absolute;
+    content: attr(data-before);
+    top: 100%;
+    font-weight: 600;
+
+}
+
+.teammate::after{
+    position: absolute;
+    content: attr(data-after);
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    font-family: 'PT Serif', serif;
+    left: 105%;
+}
+
+.teammate img{
+    max-height: 36vh;
+}
+
+.teammate:nth-child(3n-1){
+    margin-top: 9rem;
+}
+
+@media screen and (max-width: 880px) {
+    #info {
+        margin-left: 3vw;
+        margin-top: 3vh;
+        justify-content: start;
+    }
+    #container{
+        grid-template-columns: 1fr 1fr;
+        margin-right: 1.6rem;
+        margin-left: 0.5vh;
+    }
+    .teammate img{
+        max-height: 52vw;
+    }
+    .teammate:nth-child(3n-1){
+        margin-top: 0;
+    }
+    .teammate:nth-child(2n){
+        margin-top: 5rem;
+    }
+  }
