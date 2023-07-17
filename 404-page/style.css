@@ -63,11 +63,11 @@ body {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     font-size: 0.8rem;
-    max-width: 12rem;
+    width: 100%;
     padding: 1rem;
     border: 0;
     outline: none;
-    transition: all 300ms ease;
+    transition: background-color,color 300ms ease;
 }
 
 #btn:hover {
@@ -76,11 +76,14 @@ body {
     cursor: pointer;
 }
 
-#btn:focus-visible {
-    border-radius: 0.2rem;
-    border-width: 0.2rem;
-    border-style: dashed;
-    border-color: var(--tertiary-color);
+#btn-wrapper{
+    padding: 0.16rem;
+    max-width: 12rem;
+    display: inline;
+}
+
+#btn-wrapper:focus-within {
+    outline: 0.16rem dashed var(--secondary-color);
 }
 
 @keyframes floating {
